@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:300px;
+				height: 300px;
+				background-color: orangered;
+				margin: 0 auto;
+				border: 1px solid pink;
+				
+			}
+			h1{
+				text-align: center;
+				color: #fff;
+			}
+			input{
+				display: block;
+				width: 100px;
+				height: 40px;
+				background-color: blue;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1><span>5</span>秒倒计时</h2>
+			<input type="button" value="单击开始"/>
+			<h1>共点击了<span>0</span>次</h1>
+		</div>
+		<script>
+			var aSpan = document.getElementsByTagName('span');
+			var aIpt =document.getElementsByTagName('input')[0];
+			var timer = null;
+			var i=5;//5秒倒计时
+			var j=0;//点击次数
+			timer = setInterval(function(){
+					i--;
+				    aSpan[0].innerHTML=i;
+					
+				if(i==0){
+					clearInterval(timer);
+					timer =null;
+					aIpt.style.color='#ccc'
+					aIpt.disabled =true;//禁用点击按钮
+				}
+				
+			},1000);
+			aIpt.onclick = function(){
+				j++;
+				aSpan[1].innerHTML=j;
+            }
+		</script>
+	</body>
+</html>

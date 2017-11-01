@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			h1{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1><span>5</span>秒钟后页面将跳转到<a href="http://www.itcast.cn">传智播客</a></h1>
+		<script type="text/javascript">
+			var aSpan = document.getElementsByTagName('span')[0];
+			var i=5;
+			var timer = null;
+			timer = setInterval(function(){
+				if(i>0){
+					i--;
+					aSpan.innerHTML=i;
+				}else{
+					clearInterval(timer);
+					timer = null;
+					location.href='http://www.baidu.com';
+				}
+			        
+			
+			},1000);
+		</script>
+	</body>
+</html>

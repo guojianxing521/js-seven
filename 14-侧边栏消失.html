@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				position: fixed;
+				margin-top: 100px;
+			}
+			#img2{
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/1.gif" id="img1"/>
+		<img src="img/2.gif" id="img2"/>
+		<script type="text/javascript">
+			var aImg=document.getElementsByTagName('img');
+			var timer = null;//设定一个变量　初始化为空　　后续用来存定时器
+			timer = setInterval(function(){
+				aImg[0].style.display ='none';
+				aImg[1].style.display ='none';
+				clearInterval(timer);
+				console.log(timer);
+				if(timer){
+					console.log('定时器还在')
+				}else{
+					console.log('定时器清除了');
+				}
+			},3000);
+		</script>
+	</body>
+</html>

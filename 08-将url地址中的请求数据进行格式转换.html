@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var str="http:// www.baidu.com:80/login/login.php?username=zhangsan&age=26&password=1234";
+			var arr={};
+			var index= str.indexOf('?');//返回问号在自符串中的位置
+			var newstr= str.substring(index+1);//取问号之后的字符串
+			var arr1 = newstr.split('&');//变成一个数组集合，以&分隔
+//			console.log(arr1);
+			for(var i=0;i<arr1.length;i++){
+				var arr2=arr1[i].split('=');//以等号分隔。数组的第一项作为对象的属性，第二项作为对象的属性值
+				arr[arr2[0]]=arr2[1];
+			}
+			console.log(arr);
+		</script>
+	</body>
+</html>

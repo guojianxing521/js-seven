@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 500px;
+				height: 500px;
+				border: 1px solid blue;
+				margin: 40px 0;
+				position: relative;
+			}
+			img{
+				position: absolute;
+				/*position: fixed;*/
+				width: 200px;
+				/*height: 200px;*/
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="hign起来"/>
+		<input type="button" value='去敲代码'/>
+		<div>
+			<img src="img/00.jpg"  />
+		</div>
+		<script type="text/javascript">
+			var aIpt = document.getElementsByTagName('input');
+			var aDiv = document.getElementsByTagName('div')[0];
+			var aImg = document.getElementsByTagName('img')[0];
+			var timer = null;
+			aIpt[0].onclick = function(){
+				timer = setInterval(function(){
+					aImg.style.left= Math.round(Math.random()*(aDiv.offsetWidth-aImg.offsetWidth))+'px';
+
+					aImg.style.top= Math.round(Math.random()*(aDiv.offsetHeight-aImg.offsetHeight))+'px';
+				},100);
+				
+			}
+			aIpt[1].onclick = function(){
+			   clearInterval(timer);
+			   timer=null;
+				
+			}
+		</script>
+	</body>
+</html>
